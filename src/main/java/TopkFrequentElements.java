@@ -24,6 +24,18 @@ public class TopkFrequentElements {
                 .sorted(Map.Entry.<Integer,Integer>comparingByValue().reversed())
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,(e1,e2)-> e1, LinkedHashMap::new
                 ));
+
+
+        int[] arrays =  elementsAndFrequency.entrySet().stream()
+                .sorted(Map.Entry.<Integer,Integer>comparingByValue().reversed())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1,e2)-> e1, LinkedHashMap::new
+                )).keySet().stream().mapToInt(x-> x).toArray();
+
+         Arrays.copyOfRange(arrays,0,k);
+
+
+
+
         int[] finalArray = sortedMapWithFrequency.keySet().stream().mapToInt(x-> x).toArray();
         return Arrays.copyOfRange(finalArray, 0, k);
     }

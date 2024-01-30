@@ -7,12 +7,6 @@ public class ValidPalindrome {
 
         System.out.println(isPalindromeOptimize("A man, a plan, a canal: Panama"));
 
-
-        System.out.println("-----------------");
-        boolean b = 0.1*3 == 0.3;
-        boolean c = 0.1*2 == 0.2;
-        System.out.println(b);
-        System.out.println(c);
     }
 
 
